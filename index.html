@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" th:href="@{/css/index.css}">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    
+</head>
+<body>
+    <div id="geocercas">
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase.js"></script>
+    <script src="js/configFirebase.js"></script>
+    
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="img/pngegg (1).png" th:src="@{/img/pngegg (1).png}"/>
+                </div>
+                <form class="col-12" id="formularioregistro">
+                    <div class="form-group" id="email-group">
+                        <input type="text"  class="form-control" placeholder="Nombre de usuario" name="username"/>
+                    </div>
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password"  class="form-control" placeholder="Contrasena" name="password"/>
+                    </div>
+                    <!--<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>                
+                    -->
+                    <button type="submit" onclick="iniciarsesion()" class="btn btn-primary">  Iniciar Sesion </button>  
+            
+                </form>
+                              
+                
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Registrarse</button>
+                
+                <!--
+                <div class="col-12 forgot">
+                    <a href="#">Recordar contrasena?</a>
+                </div>
+                <div th:if="${param.error}" class="alert alert-danger" role="alert">
+		            Invalid username and password.
+		        </div>
+		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+		            You have been logged out.
+		        </div>
+                    -->
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-describedby="modalTitle">
+        <div class="modal-dialog">
+
+           <div class="modal-content">
+               <div class="modal-header">
+                     <h5 class="modal-title" id="modalTitle">Registrarse</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+               </div>
+               <div class="modal-body">
+                   <input type="text" id="email" placeholder="Correo Electronico">   
+                   <input type="text" id="contrasena"placeholder="Contrasena">
+               </div>
+
+               <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" onclick="registrar()">Registrarse</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+               </div>
+           </div>
+        </div>
+
+    
+   </div>
+    
+    
+    
+    
+    
+    <!--
+    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+       click me
+    </button>
+     
+    <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-describedby="modalTitle">
+         <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                      <h5 class="modal-title" id="modalTitle">Registrarse</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="email" placeholder="Correo Electronico">   
+                    <input type="text" id="contrasena"placeholder="Contrasena">
+                </div>
+
+                <div class="modal-footer">
+                     <button type="submit" class="btn btn-primary" onclick="registrar()">Registrarse</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+         </div>
+
+     
+    </div>
+   -->
+
+    <script src="https://firebase.google.com/docs/reference/js/firebase.User"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+</body>
+</html>
